@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/index"
+    "start": "npm run build && node dist/index",
+    "start:prod": "node dist/index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
