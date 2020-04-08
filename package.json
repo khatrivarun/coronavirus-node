@@ -1,0 +1,27 @@
+{
+  "name": "covid19api",
+  "version": "1.0.0",
+  "description": "Real Time Free COVID-19 Data API",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "csvtojson": "^2.0.10",
+    "prettier": "^2.0.4",
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@types/axios": "^0.14.0",
+    "@types/csvtojson": "^1.1.5",
+    "@types/express": "^4.17.4",
+    "@types/node-cron": "^2.0.3"
+  },
+  "keywords": [],
+  "author": "Varun Khatri",
+  "license": "ISC"
+}
