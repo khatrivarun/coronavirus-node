@@ -21,7 +21,7 @@ route.get("/all", async (req, res) => {
 
 route.get("/country/:country", async (req, res) => {
   try {
-    const country = req.params.country;
+    const country = req.params.country.split("-").join(" ");
     const response = await controller.getCountry(country);
 
     if (response["Required Data"] === undefined) {

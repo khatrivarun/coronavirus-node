@@ -8,7 +8,7 @@ const data = new Data();
 const PORT = process.env.PORT || 3000;
 
 cron.schedule("* * * * *", async () => {
-  console.log("running a task every minute");
+  console.log("DATA UPDATED");
   await data.cleanData();
 });
 
