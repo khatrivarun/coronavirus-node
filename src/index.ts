@@ -17,4 +17,4 @@ app.listen(PORT, async () => {
   await data.cleanData();
 });
 
-app.use("/api/v1/", route);
+app.use("/", route);
