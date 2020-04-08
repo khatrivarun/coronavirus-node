@@ -1,8 +1,11 @@
 {
-  "name": "covid19api",
+  "name": "coronavirus-api",
   "version": "1.0.0",
   "description": "Real Time Free COVID-19 Data API",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "12.1.0"
+  },
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/index"

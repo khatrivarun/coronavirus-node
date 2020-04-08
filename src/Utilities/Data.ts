@@ -11,7 +11,11 @@ export class Data {
   private readonly covid19DataRecoveredUrl: string =
     "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
 
-  public static cleanedData: any;
+  public static cleanedData: any[];
+  public static totalCases: number;
+  public static deathCases: number;
+  public static recoveredCases: number;
+  public static lastUpdated: Date;
 
   async getData(dataUrl: string) {
     const csvString = (await axios.get(dataUrl)).data;
@@ -100,5 +104,26 @@ export class Data {
     });
 
     Data.cleanedData = cleanData;
+
+    let confirmedSum = 0;
+    let deathSum = 0;
+    let recoveredSum = 0;
+
+    confirmedCsvData.forEach((data) => {
+      confirmedSum += Number(data[Object.keys(data).reverse()[0]]);
+    });
+
+    deathCsvData.forEach((data) => {
+      deathSum += Number(data[Object.keys(data).reverse()[0]]);
+    });
+
+    recoveredCsvData.forEach((data) => {
+      recoveredSum += Number(data[Object.keys(data).reverse()[0]]);
+    });
+
+    Data.totalCases = confirmedSum;
+    Data.deathCases = deathSum;
+    Data.recoveredCases = recoveredSum;
+    Data.lastUpdated = new Date(Date.now());
   }
 }
